@@ -1,7 +1,7 @@
 const Fallback = () => {
     return (
-        <div>
-            <img src="/load.gif" />
+        <div className="flex flex-col">
+            <img src="/load.gif" alt="loading..." />
         </div>
     )
 }
