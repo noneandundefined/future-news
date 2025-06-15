@@ -1,5 +1,8 @@
+import config from "./config";
 import { useEffect } from "react";
 import type { CustomRouteConfig } from "./config";
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
+import { getAuthState } from "../private-route";
 
 const CustomRoute: React.FC<CustomRouteConfig> = ({
     loginRequired = true,
@@ -7,14 +10,43 @@ const CustomRoute: React.FC<CustomRouteConfig> = ({
     component: Component,
     title,
 }) => {
+    const isLoggedIn = getAuthState();
     const location = useLocation();
-	const children = <Component />;
+    const children = <Component />;
 
     useEffect(() => {
-		if (title) {
-			document.title = `${title} - Neomatica RC`;
-		} else {
-			document.title = `Neomatica RC`;
-		}
-	}, [title]);
+        if (title) {
+            document.title = `${title} - Artemiik portfolio`;
+        } else {
+            document.title = `Artemiik portfolio`;
+        }
+    }, [title]);
+
+    if (loginRequired) {
+        if (isLoggedIn) {
+            return children;
+        } else {
+            return <Navigate to="/signin" state={{ from: location }} replace />;
+        }
+    } else {
+        return isLoggedIn && redirectIfLogged ? (
+            <Navigate to="/" replace />
+        ) : (
+            children
+        );
+    }
 }
+
+export default () => {
+    return (
+        <Routes>
+            {config.map((route) => (
+                <Route
+                    key={route.path}
+                    path={route.path}
+                    element={<CustomRoute {...route} />}
+                />
+            ))}
+        </Routes>
+    );
+};
