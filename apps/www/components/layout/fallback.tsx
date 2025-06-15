@@ -1,7 +1,7 @@
 const Fallback = () => {
     return (
         <div>
-            <img src="/"
+            <img src="/load.gif" />
         </div>
     )
 }
