@@ -1,6 +1,6 @@
 const Fallback = () => {
     return (
-        <div className="flex flex-col">
+        <div className="w-screen flex flex-col justify-center items-center">
             <img src="/load.gif" alt="loading..." />
         </div>
     )
