@@ -1,6 +1,8 @@
 const Fallback = () => {
     return (
-        <div>fallback</div>
+        <div>
+            <img src="/"
+        </div>
     )
 }
 
