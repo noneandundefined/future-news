@@ -1,11 +1,11 @@
 package database
 
 import (
+	"future.server/internal/common/database/schema"
+	"future.server/internal/lib"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
-	"future.server/internal/common/database/schema"
-	"future.server/internal/lib"
 )
 
 var db *gorm.DB
@@ -22,7 +22,7 @@ func ConnectDB(dsn string) {
 		loggerApp.Error(err.Error())
 	}
 
-	err = db.AutoMigrate(&schema.Users{}, &schema.Commands{}, &schema.Devices{}, &schema.Configurations{}, &schema.Syncs{})
+	err = db.AutoMigrate(&schema.Users{}, &schema.Chats{})
 	if err != nil {
 		loggerApp.Error(err.Error())
 	}
