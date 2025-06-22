@@ -4,8 +4,9 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/joho/godotenv"
+	"future.server/internal/common/database"
 	"future.server/internal/lib"
+	"github.com/joho/godotenv"
 )
 
 func main() {
