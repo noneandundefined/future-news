@@ -1,14 +1,13 @@
 package auth
 
+import "net/http"
+
 type Handler struct {
 }
 
-func NewHandler(monitor *vision.Vision, errors *packages.Errors) *Handler {
-	return &Handler{
-		monitor: monitor,
-		errors:  errors,
-	}
+func NewHandler() *Handler {
+	return &Handler{}
 }
 
 // Вход в аккаунт пользователя
-func (h Handler) SigninHandler(w http.ResponseWriter, r *http.Request) {
+func (h Handler) SigninHandler(w http.ResponseWriter, r *http.Request) {}
