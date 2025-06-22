@@ -1,6 +1,11 @@
 package main
 
-import "github.com/joho/godotenv"
+import (
+	"fmt"
+	"os"
+
+	"github.com/joho/godotenv"
+)
 
 func main() {
 	logger := lib.NewLogger()
