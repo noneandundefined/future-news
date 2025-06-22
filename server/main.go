@@ -5,7 +5,7 @@ import (
 	"os"
 
 	"github.com/joho/godotenv"
-	"future.server/"
+	"future.server/internal/lib"
 )
 
 func main() {
