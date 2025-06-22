@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 
+	"future.server/cmd/api"
 	"future.server/internal/common/database"
 	"future.server/internal/lib"
 	"github.com/joho/godotenv"
