@@ -1,4 +1,5 @@
 import { lazy } from 'react';
+import Signin from '../pages/signin';
 
 const Home = lazy(() => import('@/www/pages/home'));
 
@@ -15,6 +16,13 @@ const config: CustomRouteConfig[] = [
 		path: '/',
 		loginRequired: false,
 		component: Home,
+	},
+	{
+		path: '/signin',
+		title: 'signin',
+		loginRequired: false,
+		redirectIfLogged: true,
+		component: Signin,
 	},
 ];
 
