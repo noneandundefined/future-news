@@ -30,12 +30,7 @@ func (s *APIServer) Run() error {
 	router := mux.NewRouter()
 	subrouter := router.PathPrefix("/api/v1").Subrouter()
 
-	// -------------
-	// ROUTERS PATHS
-	// -------------
-	errors := packages.NewErrors()
-
-	// configuration.NewHandler(monitoring, errors).RegisterRoutes(subrouter)
+	auth.NewHandler().RegisterRoutes(subrouter)
 
 	// ------------------
 	// Middlewares
