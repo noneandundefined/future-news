@@ -28,9 +28,9 @@ const Menu = () => {
     return (
         <>
             <div className="absolute top-[4rem] right-[3.4rem] z-[11]">
-                <div className="bg-[#000] border border-[#374151] rounded-[6px]">
+                <div className="bg-[#000] border border-[#374151] rounded-[6px] flex flex-col">
                     <Link to="/gallery" className="text-[#fff] hover:text-[#fff] px-5 py-1 text-[14px] cursor-pointer hover:bg-[#222] rounded-[6px]">Gallery</Link>
-                    <Link to="/stream" className="text-[#fff] px-5 py-1 text-[14px] cursor-pointer hover:bg-[#222] rounded-[6px]">Stream</Link>
+                    <Link to="/stream" className="text-[#fff] hover:text-[#fff] px-5 py-1 text-[14px] cursor-pointer hover:bg-[#222] rounded-[6px]">Stream</Link>
                 </div>
             </div>
         </>
