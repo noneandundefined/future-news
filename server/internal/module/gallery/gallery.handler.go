@@ -52,8 +52,6 @@ func (h Handler) SetGalleryHandler(w http.ResponseWriter, r *http.Request) {
 func (h Handler) GetGalleryHandler(w http.ResponseWriter, r *http.Request) {
 	user := r.Context().Value("identity").(*schema.Users)
 
-	r.ParseMultipartForm(10 << 20)
-
 	file, handler, err := r.FormFile("photo")
 	if err != nil {
 		utils.WriteJSON(w, r, http.StatusBadRequest, "couldn't get the file")
