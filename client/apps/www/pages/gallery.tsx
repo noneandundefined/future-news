@@ -18,7 +18,7 @@ const ModalAddGallery = () => {
     return (
         <>
             <div className="absolute h-screen w-screen">
-                <div className="flexbg-[#000] border border-[#374151] rounded-[10px] max-w-[50%]">
+                <div className="flex flex-col justify-center items-center bg-[#000] border border-[#374151] rounded-[10px] max-w-[50%]">
                     sdfsdfsd
                 </div>
             </div>
