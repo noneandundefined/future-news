@@ -23,7 +23,7 @@ const ModalAddGallery = () => {
                         <p className="text-[#fff] font-medium">Add gallery</p>
                         <label
                             htmlFor="hidden-file"
-                            className="cursor-pointer my-3 bg-transparent border border-[#374151] text-white py-1 px-4 rounded-lg hover:bg-gray-700 transition text-[14px]"
+                            className="flex justify-center cursor-pointer my-3 bg-transparent border border-[#374151] text-white py-1 px-4 rounded-lg hover:bg-gray-700 transition text-[14px]"
                         >
                             <Plus fill="#fff" />
                         </label>
