@@ -78,7 +78,7 @@ func (h Handler) UpdateSelectGalleryHandler(w http.ResponseWriter, r *http.Reque
 	}
 
 	if payload.ID == 0 {
-		
+		if err := 
 	}
 
 	if err := actions.UpdateSelectGalleryById(uint()); err != nil {
