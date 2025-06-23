@@ -41,6 +41,7 @@ const ModalAddGallery = () => {
                             id="hidden-file"
                             type="file"
                             accept="image/*"
+                            onChange={handleChange}
                             className="hidden"
                         />
 
