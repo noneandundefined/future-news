@@ -65,7 +65,7 @@ class GalleryAPI {
 		}
 	}
 
-	public async set(file: File): Promise<void> {
+	public async update_select_photo(file: File): Promise<void> {
 		const formData = new FormData();
 		formData.append('photo', file);
 
