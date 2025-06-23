@@ -17,7 +17,6 @@ const Gallery = () => {
 
 const ModalAddGallery = () => {
     const [fileName, setFileName] = useState('');
-    const [status, setStatus] = useState('');
 
     const handleChange = (e: any) => {
         const file = e.target.files[0];
