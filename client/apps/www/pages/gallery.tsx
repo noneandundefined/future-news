@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Plus from "../components/icons/plus"
 import IndexLayout from "../components/layout/index-layout"
+import { ToastContainer } from "react-toastify";
 
 const Gallery = () => {
     return (
