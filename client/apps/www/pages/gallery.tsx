@@ -6,6 +6,11 @@ const Gallery = () => {
     const [fileName, setFileName] = useState('');
     const [status, setStatus] = useState('');
 
+    const handleChange = (e: any) => {
+        const file = e.target.files[0];
+        if (file) setFileName(file.name);
+    };
+
     return (
         <>
             <ModalAddGallery />
