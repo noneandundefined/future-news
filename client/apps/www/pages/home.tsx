@@ -39,7 +39,7 @@ const Home = () => {
 						</div>
 					</div>
 
-					<div className="w-full lg:w-1/3 bg-black border border-gray-800 rounded-xl p-4 flex flex-col max-h-[70vh]">
+					<div className="w-full lg:w-1/3 bg-black border border-gray-800 rounded-xl p-4 flex flex-col max-h-[80vh]">
 						<div className="text-gray-300 font-semibold mb-2">
 							CHAT
 						</div>
