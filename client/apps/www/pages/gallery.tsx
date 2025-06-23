@@ -21,7 +21,22 @@ const ModalAddGallery = () => {
                 <div className="bg-[#000] border border-[#374151] rounded-[10px] p-6">
                     <div className="flex flex-col">
                         <p className="text-[#fff] font-medium">Add gallery</p>
-                        <input type="file" />
+                        <label
+                            htmlFor="hidden-file"
+                            className="cursor-pointer bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition"
+                        >
+                            Выбрать фото
+                        </label>
+
+                        <input
+                            id="hidden-file"
+                            type="file"
+                            accept="image/*"
+                            className="hidden"
+                            onChange={handleChange}
+                        />
+
+                        {fileName && <p className="text-sm text-gray-700">Выбран файл: <strong>{fileName}</strong></p>}
                         <button>Save</button>
                     </div>
                 </div>
