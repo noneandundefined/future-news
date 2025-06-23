@@ -1,8 +1,9 @@
-import { config } from "@/app/config/config.client";
-import axios from "axios";
+import { config } from '@/app/config/config.client';
+import axios, { AxiosError } from 'axios';
+import { toast } from 'react-toastify';
 
 class GalleryAPI {
-    public async get(): Promise<Device[]> {
+	public async get(): Promise<Device[]> {
 		try {
 			const response = await axios.get(
 				`${
