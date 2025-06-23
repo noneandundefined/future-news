@@ -9,7 +9,7 @@ class GalleryAPI {
 					config.type.release == 'dev'
 						? config.links.URL_BACKEND_DEV
 						: config.links.URL_BACKEND_PROD
-				}/device`,
+				}/gallery`,
 				{
 					withCredentials: true,
 				}
