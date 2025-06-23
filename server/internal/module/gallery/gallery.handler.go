@@ -51,18 +51,6 @@ func (h Handler) SetGalleryHandler(w http.ResponseWriter, r *http.Request) {
 
 func (h Handler) GetGalleryHandler(w http.ResponseWriter, r *http.Request) {
 	user := r.Context().Value("identity").(*schema.Users)
+
 	
-	photo := schema.Gallery{
-		UserUUID: user.UUID,
-		Content:  fileBytes,
-		Name:     handler.Filename,
-		Format:   handler.Header.Get("Content-Type"),
-	}
-
-	if err := actions.CreateGallery(&photo); err != nil {
-		utils.WriteJSON(w, r, http.StatusBadRequest, err.Error())
-		return
-	}
-
-	utils.WriteJSON(w, r, http.StatusOK, "successfully adding a photo to the gallery")
 }
