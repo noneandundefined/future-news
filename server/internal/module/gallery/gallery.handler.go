@@ -58,6 +58,6 @@ func (h Handler) GetGalleryHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	utils.CacheJSON(w, 300)
-	utils.WriteJSON(w, r, http.StatusOK, )
+	utils.CacheJSON(w, 60)
+	utils.WriteJSON(w, r, http.StatusOK, gallery)
 }
