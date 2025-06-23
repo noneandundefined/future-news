@@ -4,7 +4,7 @@ import IndexLayout from "../components/layout/index-layout"
 const Gallery = () => {
     return (
         <IndexLayout>
-            <div className="flex border border-[#374151] rounded-[6px] p-6 max-w-[10%]">
+            <div className="flex justify-center items-center border border-[#374151] rounded-[6px] p-6 max-w-[10%] hover:bg-[#111]">
                 <Plus fill="#fff" />
             </div>
         </IndexLayout>
