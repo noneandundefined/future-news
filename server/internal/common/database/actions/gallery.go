@@ -20,4 +20,4 @@ func CreateGallery(gallery *schema.Gallery) error {
 	return nil
 }
 
-func GetGalleryByUserUUID
+func GetGalleryByUserUUID(uuid string) ([]schema.)
