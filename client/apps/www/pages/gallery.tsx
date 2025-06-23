@@ -3,14 +3,6 @@ import Plus from "../components/icons/plus"
 import IndexLayout from "../components/layout/index-layout"
 
 const Gallery = () => {
-    const [fileName, setFileName] = useState('');
-    const [status, setStatus] = useState('');
-
-    const handleChange = (e: any) => {
-        const file = e.target.files[0];
-        if (file) setFileName(file.name);
-    };
-
     return (
         <>
             <ModalAddGallery />
@@ -24,6 +16,14 @@ const Gallery = () => {
 }
 
 const ModalAddGallery = () => {
+    const [fileName, setFileName] = useState('');
+    const [status, setStatus] = useState('');
+
+    const handleChange = (e: any) => {
+        const file = e.target.files[0];
+        if (file) setFileName(file.name);
+    };
+
     return (
         <>
             <div className="absolute h-screen w-screen flex flex-col justify-center items-center">
@@ -44,6 +44,8 @@ const ModalAddGallery = () => {
                             onChange={handleChange}
                             className="hidden"
                         />
+
+                        {fileName && <p className="text-sm text-gray-700">Выбран файл: <strong>{fileName}</strong></p>}
 
                         <button className="bg-gray-600 text-white py-2 px-4 rounded-lg hover:bg-gray-700 transition">Save</button>
                     </div>
