@@ -31,7 +31,7 @@ const Gallery = () => {
                         <Plus fill="#fff" />
                     </div>
                     {galleries.map((gallery, index) => (
-                        <div key={index} className="min-h-[6rem] max-w-[11rem] cursor-pointer p-1 border border-[#374151] hover:border-[#fff] rounded-md" onClick={async () => }>
+                        <div key={index} className="min-h-[6rem] max-w-[11rem] cursor-pointer p-1 border border-[#374151] hover:border-[#fff] rounded-md" onClick={() }>
                             <img src={`data:${gallery.format};base64,${gallery.content}`} alt="" className="rounded-md" />
                         </div>
                     ))}
