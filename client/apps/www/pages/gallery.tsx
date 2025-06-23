@@ -17,12 +17,16 @@ const Gallery = () => {
 }
 
 const ModalAddGallery = () => {
-    const [fileName, setFileName] = useState('');
+    const [file, setFile] = useState<File | null>(null);
 
-    const handleChange = (e: any) => {
-        const file = e.target.files[0];
-        if (file) setFileName(file.name);
+    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const selected = e.target.files?.[0] || null;
+        setFile(selected);
     };
+
+    const handleSetGallery = () => {
+        if (!fileName)
+    }
 
     return (
         <>

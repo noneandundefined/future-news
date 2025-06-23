@@ -3,7 +3,10 @@ import axios, { AxiosError } from 'axios';
 import { toast } from 'react-toastify';
 
 class GalleryAPI {
-	public async set(): Promise<void> {
+	public async set(file: File): Promise<void> {
+		const formData = new FormData();
+		formData.append('photo', file);
+
 		try {
 			const response = await axios.post(
 				`${
@@ -11,7 +14,9 @@ class GalleryAPI {
 						? config.links.URL_BACKEND_DEV
 						: config.links.URL_BACKEND_PROD
 				}/gallery`,
+				formData,
 				{
+					headers: { 'Content-Type': 'multipart/form-data' },
 					withCredentials: true,
 				}
 			);
@@ -27,8 +32,6 @@ class GalleryAPI {
 			} else {
 				toast.error('Произошла ошибка. Пожалуйста, попробуйте снова.');
 			}
-
-			return [];
 		}
 	}
 
