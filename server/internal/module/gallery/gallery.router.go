@@ -7,8 +7,8 @@ import (
 )
 
 func (h Handler) RegisterRoutes(router *mux.Router) {
-	authRouter := router.PathPrefix("/gallery").Subrouter()
+	galleryRouter := router.PathPrefix("/gallery").Subrouter()
 
-	authRouter.HandleFunc("", h.SetGalleryHandler).Methods(http.MethodPost)
-	authRouter.HandleFunc("", h.GetGalleryHandler).Methods(http.MethodPost)
+	galleryRouter.HandleFunc("", h.SetGalleryHandler).Methods(http.MethodPost)
+	galleryRouter.HandleFunc("", h.GetGalleryHandler).Methods(http.MethodGet)
 }
