@@ -35,7 +35,7 @@ const ModalAddGallery = () => {
                             className="hidden"
                         />
 
-                        <button className="bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition">Save</button>
+                        <button className="bg-gray-600 text-white py-2 px-4 rounded-lg hover:bg-gray-700 transition">Save</button>
                     </div>
                 </div>
             </div>
