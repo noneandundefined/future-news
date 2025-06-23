@@ -23,7 +23,7 @@ const ModalAddGallery = () => {
                         <p className="text-[#fff] font-medium">Add gallery</p>
                         <label
                             htmlFor="hidden-file"
-                            className="cursor-pointer bg-gray-600 text-white py-2 px-4 rounded-lg hover:bg-gray-700 transition"
+                            className="cursor-pointer bg-gray-600 text-white py-1 px-4 rounded-lg hover:bg-gray-700 transition"
                         >
                             Выбрать фото
                         </label>
