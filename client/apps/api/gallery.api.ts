@@ -3,7 +3,7 @@ import axios, { AxiosError } from 'axios';
 import { toast } from 'react-toastify';
 
 class GalleryAPI {
-	public async get(): Promise<Device[]> {
+	public async get(): Promise<GalleryAPI[]> {
 		try {
 			const response = await axios.get(
 				`${
