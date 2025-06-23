@@ -39,11 +39,11 @@ func GetGalleryByUserUUID(uuid string) ([]schema.Gallery, error) {
 	return gallery, nil
 }
 
-func UpdateSelectGalleryById(id uint, s bool) error {
+func UpdateSelectGalleryById(id uint) error {
 	logger := lib.NewLogger()
 	db := database.GetDB()
 
-	if err := db.Model(&schema.Gallery{}).Where("id = ?", id).Update("select", s).Error; err != nil {
+	if err := db.Model(&schema.Gallery{}).Where("id = ?", id).Update("select", true).Error; err != nil {
 		logger.Error(fmt.Sprintf("Database -> 'Error while fetching gallery: %v'", err))
 		return fmt.Errorf("error when selecting photos from the gallery.")
 	}
