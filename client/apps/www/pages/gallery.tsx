@@ -14,7 +14,9 @@ const Gallery = () => {
 const ModalAddGallery = () => {
     return (
         <>
-            <div className="absolute"></div>
+            <div className="absolute">
+                <div className="bg-[#000] border border-[#374151] rounded-[10px]"></div>
+            </div>
         </>
     )
 }
