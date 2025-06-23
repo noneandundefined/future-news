@@ -54,7 +54,9 @@ func (h Handler) GetGalleryHandler(w http.ResponseWriter, r *http.Request) {
 
 	gallery, err := actions.GetGalleryByUserUUID(user.UUID)
 	if err != nil {
-		utils.WriteJSON(w, r, http.StatusBadRequest, err.E)
-		
+		utils.WriteJSON(w, r, http.StatusBadRequest, err.Error())
+		return
 	}
+
+	utils.WriteJSON(w, r, )
 }
