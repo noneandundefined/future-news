@@ -1,11 +1,13 @@
 package actions
 
 import (
+	"errors"
 	"fmt"
 
 	"future.server/internal/common/database"
 	"future.server/internal/common/database/schema"
 	"future.server/internal/lib"
+	"gorm.io/gorm"
 )
 
 func CreateGallery(gallery *schema.Gallery) error {
