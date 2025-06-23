@@ -55,9 +55,9 @@ func UpdateAllSelectToFalseByUUID(uuid string) error {
 	logger := lib.NewLogger()
 	db := database.GetDB()
 
-	if err := db.Model(&schema.Gallery{}).Where("user_uuid = ?", uuid).
-		Update("select", false).Error; err != nil {
-		return fmt.Errorf("failed to unselect gallery: %w", err)
+	if err := db.Model(&schema.Gallery{}).Where("user_uuid = ?", uuid).Update("select", false).Error; err != nil {
+		logger.Error(fmt.Sprintf("Database -> 'Error while fetching gallery: %v'", err))
+		return fmt.Errorf("error when selecting photos from the gallery.")
 	}
 
 	return nil
