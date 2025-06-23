@@ -77,6 +77,10 @@ func (h Handler) UpdateSelectGalleryHandler(w http.ResponseWriter, r *http.Reque
 		return
 	}
 
+	if payload.ID == 0 {
+		
+	}
+
 	if err := actions.UpdateSelectGalleryById(uint()); err != nil {
 		utils.WriteJSON(w, r, http.StatusBadRequest, err.Error())
 		return
