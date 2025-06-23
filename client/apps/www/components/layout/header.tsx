@@ -28,7 +28,7 @@ const Menu = () => {
         <>
             <div className="absolute top-[4rem] right-[3.4rem] z-[11]">
                 <div className="bg-[#000] border border-[#374151] rounded-[6px]">
-                    <p className="text-[#fff] px-5 py-1 text-[14px] cursor-pointer hover:bg-[#222] rounded-[6px]">Gallery</p>
+                    <Link to="" className="text-[#fff] px-5 py-1 text-[14px] cursor-pointer hover:bg-[#222] rounded-[6px]">Gallery</Link>
                     <p className="text-[#fff] px-5 py-1 text-[14px] cursor-pointer hover:bg-[#222] rounded-[6px]">Stream</p>
                 </div>
             </div>
