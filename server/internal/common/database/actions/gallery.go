@@ -36,5 +36,5 @@ func GetGalleryByUserUUID(uuid string) ([]schema.Gallery, error) {
 		return nil, fmt.Errorf("error when selecting photos from the gallery.")
 	}
 
-	return &gallery, nil
+	return gallery, nil
 }
