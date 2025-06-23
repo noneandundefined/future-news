@@ -28,7 +28,7 @@ const config: CustomRouteConfig[] = [
 	{
 		path: '/gallery',
 		title: 'gallery for stream',
-		loginRequired: true,
+		loginRequired: false, // true
 		component: Gallery,
 	},
 ];
