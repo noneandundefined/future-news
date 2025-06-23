@@ -11,6 +11,12 @@ const Gallery = () => {
     )
 }
 
-const Modal
+const ModalAddGallery = () => {
+    return (
+        <>
+            <div className=""></div>
+        </>
+    )
+}
 
 export default Gallery
