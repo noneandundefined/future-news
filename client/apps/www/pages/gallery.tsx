@@ -3,7 +3,9 @@ import IndexLayout from "../components/layout/index-layout"
 const Gallery = () => {
     return (
         <IndexLayout>
-            <div></div>
+            <div>
+                
+            </div>
         </IndexLayout>
     )
 }
