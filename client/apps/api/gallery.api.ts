@@ -75,7 +75,6 @@ class GalleryAPI {
 				}/gallery`,
 				id,
 				{
-					headers: { 'Content-Type': 'multipart/form-data' },
 					withCredentials: true,
 				}
 			);
