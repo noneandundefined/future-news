@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import Header from './header';
 
 type IndexLayoutProps = {
 	children: ReactNode;
@@ -9,7 +10,7 @@ const IndexLayout: React.FC<IndexLayoutProps> = ({ children }) => {
 		<>
 			<div className="min-h-[95vh] m-6 border border-[#222] rounded-[20px]">
 				<div className="max-h-[5rem]">
-					<Header
+					<Header />
 				</div>
 				<div className="p-6">{children}</div>
 			</div>

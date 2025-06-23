@@ -7,6 +7,8 @@ const Header = () => {
                     <div className="h-3 w-3 bg-[#ff0000d9] rounded-full" />
                     <p className="text-white">LIVE</p>
                 </div>
+
+                
             </nav>
         </header>
     )
