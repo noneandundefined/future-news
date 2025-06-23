@@ -14,5 +14,5 @@ func (h Handler) RegisterRoutes(router *mux.Router) {
 
 	galleryRouter.HandleFunc("", h.SetGalleryHandler).Methods(http.MethodPost)
 	galleryRouter.HandleFunc("", h.GetGalleryHandler).Methods(http.MethodGet)
-	galleryRouter.HandleFunc("/{id}", h.UpdateSelectGalleryHandler).Methods(http.MethodPut)
+	galleryRouter.HandleFunc("", h.UpdateSelectGalleryHandler).Methods(http.MethodPut)
 }
