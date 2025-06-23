@@ -1,7 +1,11 @@
+import { useState } from "react";
 import Plus from "../components/icons/plus"
 import IndexLayout from "../components/layout/index-layout"
 
 const Gallery = () => {
+    const [fileName, setFileName] = useState('');
+    const [status, setStatus] = useState('');
+
     return (
         <>
             <ModalAddGallery />
