@@ -4,7 +4,7 @@ import IndexLayout from "../components/layout/index-layout"
 const Gallery = () => {
     return (
         <IndexLayout>
-            <div className="border border-[]">
+            <div className="border border-[#374151] rounded-[]">
                 <Plus fill="#fff" />
             </div>
         </IndexLayout>
