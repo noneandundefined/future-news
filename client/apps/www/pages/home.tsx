@@ -28,7 +28,7 @@ const Home = () => {
 								</p>
 							</div>
 						</div>
-						<div className="mt-3 flex justify-between text-sm text-gray-500">
+						<div className="mt- flex justify-between text-sm text-gray-500">
 							<span>NOW STREAMING: The leader #thef</span>
 							<div className="flex items-center gap-2">
 								<div className="h-2 w-2 bg-[#ff0000d9] rounded-full" />
