@@ -18,12 +18,12 @@ const ModalAddGallery = () => {
     return (
         <>
             <div className="absolute h-screen w-screen flex flex-col justify-center items-center">
-                <div className="bg-[#000] border border-[#374151] rounded-[10px] p-6">
+                <div className="bg-[#000] border border-[#374151] rounded-[10px] p-6 min-w-[50%]">
                     <div className="flex flex-col">
                         <p className="text-[#fff] font-medium">Add gallery</p>
                         <label
                             htmlFor="hidden-file"
-                            className="cursor-pointer mt-3 bg-gray-600 text-white py-1 px-4 rounded-lg hover:bg-gray-700 transition text-[14px]"
+                            className="cursor-pointer my-3 bg-gray-600 text-white py-1 px-4 rounded-lg hover:bg-gray-700 transition text-[14px]"
                         >
                             Выбрать фото
                         </label>
