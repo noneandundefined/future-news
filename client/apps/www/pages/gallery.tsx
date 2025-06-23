@@ -25,6 +25,14 @@ const ModalAddGallery = () => {
 
     return (
         <>
+            <ToastContainer
+                position="bottom-right"
+                autoClose={2500}
+                hideProgressBar={true}
+                newestOnTop={false}
+                closeOnClick={true}
+            />
+
             <div className="absolute h-screen w-screen flex flex-col justify-center items-center">
                 <div className="bg-[#000] border border-[#374151] rounded-[10px] p-6 min-w-[30%]">
                     <div className="flex flex-col">
