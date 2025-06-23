@@ -66,19 +66,6 @@ func (h Handler) GetGalleryHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func (h Handler) UpdateSelectGalleryHandler(w http.ResponseWriter, r *http.Request) {
-	vars := mux.Vars(r)
-	idParam := vars["id"]
-	if idParam == "" {
-		utils.WriteJSON(w, r, http.StatusBadRequest, "could not find a photo with the specified id.")
-		return
-	}
-
-	id, err := strconv.Atoi(idParam)
-	if err != nil {
-		utils.WriteJSON(w, r, http.StatusBadRequest, "could not find a photo with the specified id.")
-		return
-	}
-
 	var payload types.SelectGalleryPayload
 
 	if err := utils.ParseJSON(r, &payload); err != nil {
