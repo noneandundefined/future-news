@@ -27,5 +27,5 @@ type SigninPayload struct {
 }
 
 type SelectGalleryPayload struct {
-	ID bool `json:"is_select" validate:"required"`
+	ID uint `json:"id" validate:"required"`
 }
