@@ -45,7 +45,7 @@ const ModalAddGallery = () => {
                             className="hidden"
                         />
 
-                        {fileName && <p className="text-md text-gray-700">Выбран файл: <strong>{fileName}</strong></p>}
+                        {fileName && <p className="text-md text-white mb-3">Выбран файл: <strong>{fileName}</strong></p>}
 
                         <button className="bg-gray-600 text-white py-2 px-4 rounded-lg hover:bg-gray-700 transition">Save</button>
                     </div>
