@@ -64,6 +64,38 @@ class GalleryAPI {
 			return [];
 		}
 	}
+
+	public async set(file: File): Promise<void> {
+		const formData = new FormData();
+		formData.append('photo', file);
+
+		try {
+			const response = await axios.post(
+				`${
+					config.type.release == 'dev'
+						? config.links.URL_BACKEND_DEV
+						: config.links.URL_BACKEND_PROD
+				}/gallery`,
+				formData,
+				{
+					headers: { 'Content-Type': 'multipart/form-data' },
+					withCredentials: true,
+				}
+			);
+
+			toast.success(response.data.message);
+		} catch (error) {
+			if (error instanceof AxiosError) {
+				if (error.response) {
+					toast.error(error.response.data.message);
+				} else if (error.request) {
+					toast.error('error when sending the request.');
+				}
+			} else {
+				toast.error('an error has occurred. Please try again.');
+			}
+		}
+	}
 }
 
 export default new GalleryAPI();

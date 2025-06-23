@@ -66,6 +66,7 @@ func (h Handler) GetGalleryHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func (h Handler) UpdateSelectGalleryHandler(w http.ResponseWriter, r *http.Request) {
+	user := r.Context().Value("identity").(*schema.Users)
 	var payload types.SelectGalleryPayload
 
 	if err := utils.ParseJSON(r, &payload); err != nil {
@@ -78,10 +79,16 @@ func (h Handler) UpdateSelectGalleryHandler(w http.ResponseWriter, r *http.Reque
 	}
 
 	if payload.ID == 0 {
-		if err := 
+		if err := actions.UpdateAllSelectToFalseByUUID(user.UUID); err != nil {
+			utils.WriteJSON(w, r, http.StatusBadRequest, err.Error())
+			return
+		}
+
+		utils.WriteJSON(w, r, http.StatusOK, "default stream photo set.")
+		return
 	}
 
-	if err := actions.UpdateSelectGalleryById(uint()); err != nil {
+	if err := actions.UpdateSelectGalleryById(uint(payload.ID)); err != nil {
 		utils.WriteJSON(w, r, http.StatusBadRequest, err.Error())
 		return
 	}
