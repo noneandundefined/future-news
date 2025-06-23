@@ -11,6 +11,6 @@ const Gallery = () => {
     )
 }
 
-const 
+const Modal
 
 export default Gallery
