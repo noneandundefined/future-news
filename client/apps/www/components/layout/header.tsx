@@ -13,12 +13,10 @@ const Header = () => {
                     <p className="text-white">LIVE</p>
                 </div>
 
-                <div className="cursor-pointer" onClick={}>
+                <div className="cursor-pointer" onClick={() => setIsOpenMenu(!isOpenMenu)}>
                     <DotsVertical fill="#fff" />
                 </div>
             </nav>
-
-            <Menu />
         </header>
     )
 }
