@@ -14,7 +14,7 @@ const Gallery = () => {
 const ModalAddGallery = () => {
     return (
         <>
-            <div className=""></div>
+            <div className="absolute"></div>
         </>
     )
 }
