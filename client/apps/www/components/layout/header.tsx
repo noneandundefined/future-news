@@ -1,5 +1,6 @@
 import { useState } from "react"
 import DotsVertical from "../icons/dots-vertical"
+import { Link } from "react-router-dom";
 
 const Header = () => {
     const [isOpenMenu, setIsOpenMenu] = useState<boolean>(false);
@@ -28,8 +29,8 @@ const Menu = () => {
         <>
             <div className="absolute top-[4rem] right-[3.4rem] z-[11]">
                 <div className="bg-[#000] border border-[#374151] rounded-[6px]">
-                    <Link to="" className="text-[#fff] px-5 py-1 text-[14px] cursor-pointer hover:bg-[#222] rounded-[6px]">Gallery</Link>
-                    <p className="text-[#fff] px-5 py-1 text-[14px] cursor-pointer hover:bg-[#222] rounded-[6px]">Stream</p>
+                    <Link to="/gallery" className="text-[#fff] px-5 py-1 text-[14px] cursor-pointer hover:bg-[#222] rounded-[6px]">Gallery</Link>
+                    <Link to="/stream" className="text-[#fff] px-5 py-1 text-[14px] cursor-pointer hover:bg-[#222] rounded-[6px]">Stream</Link>
                 </div>
             </div>
         </>
