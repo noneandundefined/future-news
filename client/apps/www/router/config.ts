@@ -24,6 +24,13 @@ const config: CustomRouteConfig[] = [
 		redirectIfLogged: true,
 		component: Signin,
 	},
+	{
+		path: '/signin',
+		title: 'signin',
+		loginRequired: false,
+		redirectIfLogged: true,
+		component: Signin,
+	},
 ];
 
 export default config;
