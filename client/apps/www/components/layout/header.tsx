@@ -10,7 +10,9 @@ const Header = () => {
                     <p className="text-white">LIVE</p>
                 </div>
 
-                <DotsVertical fill="" />
+                <div>
+                    <DotsVertical fill="#fff" />
+                </div>
             </nav>
         </header>
     )
