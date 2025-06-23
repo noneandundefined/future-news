@@ -52,5 +52,9 @@ func (h Handler) SetGalleryHandler(w http.ResponseWriter, r *http.Request) {
 func (h Handler) GetGalleryHandler(w http.ResponseWriter, r *http.Request) {
 	user := r.Context().Value("identity").(*schema.Users)
 
-	gallery, err := actions.GetGalleryByUserUUID()
+	gallery, err := actions.GetGalleryByUserUUID(user.UUID)
+	if err != nil {
+		utils.WriteJSON(w, r, http.StatusBadRequest, err.E)
+		
+	}
 }
