@@ -1,3 +1,5 @@
+import DotsVertical from "../icons/dots-vertical"
+
 const Header = () => {
     return (
         <header className="z-10 flex justify-between items-center px-6 py-4 border-b border-[#222]">
@@ -8,7 +10,7 @@ const Header = () => {
                     <p className="text-white">LIVE</p>
                 </div>
 
-                
+                <DotsVertical fill="" />
             </nav>
         </header>
     )
