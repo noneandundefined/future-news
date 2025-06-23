@@ -52,5 +52,5 @@ func (h Handler) SetGalleryHandler(w http.ResponseWriter, r *http.Request) {
 func (h Handler) GetGalleryHandler(w http.ResponseWriter, r *http.Request) {
 	user := r.Context().Value("identity").(*schema.Users)
 
-	
+	gallery, err := actions.GetGalleryByUserUUID()
 }
