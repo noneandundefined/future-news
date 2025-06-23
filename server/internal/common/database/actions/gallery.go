@@ -32,8 +32,8 @@ func GetGalleryByUserUUID(uuid string) ([]schema.Gallery, error) {
 			return nil, nil
 		}
 
-		logger.Error(fmt.Sprintf("Database -> 'Error while fetching device: %v'", err))
-		return nil, fmt.Errorf("Error when selecting photos from the gallery.")
+		logger.Error(fmt.Sprintf("Database -> 'Error while fetching gallery: %v'", err))
+		return nil, fmt.Errorf("error when selecting photos from the gallery.")
 	}
 
 	return &device, nil
