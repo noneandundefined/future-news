@@ -19,7 +19,7 @@ const ModalAddGallery = () => {
         <>
             <div className="absolute h-screen w-screen flex flex-col justify-center items-center">
                 <div className="bg-[#000] border border-[#374151] rounded-[10px] p-6">
-                    <div>
+                    <div className="flex flex-col">
                         <p className="text-[#fff] font-medium">Add gallery</p>
                         <input type="file" />
                         <button>Save</button>
