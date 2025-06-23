@@ -25,9 +25,9 @@ const config: CustomRouteConfig[] = [
 		component: Signin,
 	},
 	{
-		path: '/signin',
-		title: 'signin',
-		loginRequired: false,
+		path: '/gallery',
+		title: 'gallery for stream',
+		loginRequired: true,
 		redirectIfLogged: true,
 		component: Signin,
 	},
