@@ -22,7 +22,7 @@ func ConnectDB(dsn string) {
 		loggerApp.Error(err.Error())
 	}
 
-	err = db.AutoMigrate(&schema.Users{}, &schema.Chats{})
+	err = db.AutoMigrate(&schema.Users{}, &schema.Chats{}, &schema.Gallery{}, &schema.Streams{})
 	if err != nil {
 		loggerApp.Error(err.Error())
 	}

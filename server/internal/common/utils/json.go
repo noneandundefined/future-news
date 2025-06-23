@@ -7,8 +7,8 @@ import (
 	"net/http"
 	"strings"
 
-	jsoniter "github.com/json-iterator/go"
 	"future.server/internal/lib"
+	jsoniter "github.com/json-iterator/go"
 )
 
 var json = jsoniter.ConfigCompatibleWithStandardLibrary
@@ -16,7 +16,7 @@ var json = jsoniter.ConfigCompatibleWithStandardLibrary
 // Проверка и декодирование данных от user
 func ParseJSON(r *http.Request, payload any) error {
 	if r.Body == nil {
-		return fmt.Errorf("Отсутствует текст запроса")
+		return fmt.Errorf("the request text is missing")
 	}
 
 	return json.NewDecoder(r.Body).Decode(payload)
@@ -48,7 +48,7 @@ func WriteJSON(w http.ResponseWriter, r *http.Request, status int, v any) {
 
 	if err := json.NewEncoder(writer).Encode(map[string]any{"message": v}); err != nil {
 		logger.Error(err.Error())
-		http.Error(w, "Неизвестная ошибка от сервера", http.StatusBadGateway)
+		http.Error(w, "unknown error from the server", http.StatusBadGateway)
 	}
 }
 

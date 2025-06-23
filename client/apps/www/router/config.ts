@@ -1,6 +1,7 @@
 import { lazy } from 'react';
 import Signin from '../pages/signin';
 import Gallery from '../pages/gallery';
+import Signup from '../pages/signup';
 
 const Home = lazy(() => import('@/www/pages/home'));
 
@@ -16,6 +17,7 @@ const config: CustomRouteConfig[] = [
 	{
 		path: '/',
 		loginRequired: false,
+		redirectIfLogged: false,
 		component: Home,
 	},
 	{
@@ -26,9 +28,16 @@ const config: CustomRouteConfig[] = [
 		component: Signin,
 	},
 	{
+		path: '/signup',
+		title: 'signup',
+		loginRequired: false,
+		redirectIfLogged: true,
+		component: Signup,
+	},
+	{
 		path: '/gallery',
 		title: 'gallery for stream',
-		loginRequired: false, // true
+		loginRequired: true, // true
 		component: Gallery,
 	},
 ];

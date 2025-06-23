@@ -1,29 +1,30 @@
 import { config } from '@/app/config/config.client';
-import type { Gallery } from '@/app/types/gallery.type';
 import axios, { AxiosError } from 'axios';
 import { toast } from 'react-toastify';
 
-class GalleryAPI {
-	public async set(file: File): Promise<void> {
-		const formData = new FormData();
-		formData.append('photo', file);
-
+class UserAPI {
+	public async signin(username: string, password: string): Promise<void> {
 		try {
 			const response = await axios.post(
 				`${
 					config.type.release == 'dev'
 						? config.links.URL_BACKEND_DEV
 						: config.links.URL_BACKEND_PROD
-				}/gallery`,
-				formData,
+				}/auth/signin`,
 				{
-					headers: { 'Content-Type': 'multipart/form-data' },
+					login: username,
+					password: password,
+				},
+				{
 					withCredentials: true,
 				}
 			);
 
 			toast.success(response.data.message);
-		} catch (error) {
+			setTimeout(() => {
+				window.location.reload();
+			}, 1500);
+		} catch (error: any) {
 			if (error instanceof AxiosError) {
 				if (error.response) {
 					toast.error(error.response.data.message);
@@ -36,21 +37,28 @@ class GalleryAPI {
 		}
 	}
 
-	public async get(): Promise<Gallery[]> {
+	public async signup(username: string, password: string): Promise<void> {
 		try {
-			const response = await axios.get(
+			const response = await axios.post(
 				`${
 					config.type.release == 'dev'
 						? config.links.URL_BACKEND_DEV
 						: config.links.URL_BACKEND_PROD
-				}/gallery`,
+				}/auth/signup`,
+				{
+					login: username,
+					password: password,
+				},
 				{
 					withCredentials: true,
 				}
 			);
 
-			return response.data.message;
-		} catch (error) {
+			toast.success(response.data.message);
+			setTimeout(() => {
+				window.location.href = '/signin';
+			}, 1500);
+		} catch (error: any) {
 			if (error instanceof AxiosError) {
 				if (error.response) {
 					toast.error(error.response.data.message);
@@ -60,10 +68,8 @@ class GalleryAPI {
 			} else {
 				toast.error('an error has occurred. Please try again.');
 			}
-
-			return [];
 		}
 	}
 }
 
-export default new GalleryAPI();
+export default new UserAPI();

@@ -3,10 +3,13 @@ package gallery
 import (
 	"io"
 	"net/http"
+	"strconv"
 
 	"future.server/internal/common/database/actions"
 	"future.server/internal/common/database/schema"
 	"future.server/internal/common/utils"
+	"future.server/internal/types"
+	"github.com/gorilla/mux"
 )
 
 type Handler struct {
@@ -38,7 +41,7 @@ func (h Handler) SetGalleryHandler(w http.ResponseWriter, r *http.Request) {
 		UserUUID: user.UUID,
 		Content:  fileBytes,
 		Name:     handler.Filename,
-		Format:   handler.Header.Get("Content-Type"),
+		Format:   http.DetectContentType(fileBytes[:512]),
 	}
 
 	if err := actions.CreateGallery(&photo); err != nil {
@@ -60,4 +63,37 @@ func (h Handler) GetGalleryHandler(w http.ResponseWriter, r *http.Request) {
 
 	utils.CacheJSON(w, 60)
 	utils.WriteJSON(w, r, http.StatusOK, gallery)
+}
+
+func (h Handler) UpdateSelectGalleryHandler(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	idParam := vars["id"]
+	if idParam == "" {
+		utils.WriteJSON(w, r, http.StatusBadRequest, "could not find a photo with the specified id.")
+		return
+	}
+
+	id, err := strconv.Atoi(idParam)
+	if err != nil {
+		utils.WriteJSON(w, r, http.StatusBadRequest, "could not find a photo with the specified id.")
+		return
+	}
+
+	var payload types.SelectGalleryPayload
+
+	if err := utils.ParseJSON(r, &payload); err != nil {
+		utils.WriteJSON(w, r, http.StatusBadRequest, err.Error())
+	}
+
+	if err := utils.Validate.Struct(payload); err != nil {
+		utils.WriteJSON(w, r, http.StatusBadRequest, "not all fields are filled in")
+		return
+	}
+
+	if err := actions.UpdateSelectGalleryById(uint(id), payload.Select); err != nil {
+		utils.WriteJSON(w, r, http.StatusBadRequest, err.Error())
+		return
+	}
+
+	utils.WriteJSON(w, r, http.StatusOK, "the photo has been installed on the stream!")
 }

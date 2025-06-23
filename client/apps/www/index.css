@@ -43,3 +43,22 @@ body {
 	-ms-overflow-style: none;
 	scrollbar-width: none;
 }
+
+.Toastify__toast-container {
+	width: auto;
+}
+
+.Toastify__toast {
+	width: auto;
+	gap: 0.7rem;
+	word-wrap: break-word;
+	white-space: normal;
+}
+
+.Toastify__close-button {
+	display: none;
+}
+
+#martiana {
+	font-family: 'Nunito Sans', sans-serif;
+}

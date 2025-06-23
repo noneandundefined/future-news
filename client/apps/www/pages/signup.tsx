@@ -3,7 +3,7 @@ import IndexLayout from '../components/layout/index-layout';
 import { ToastContainer } from 'react-toastify';
 import userAPI from '@/api/user.api';
 
-const Signin = () => {
+const Signup = () => {
 	const [username, setUsername] = useState<string>('');
 	const [password, setPassword] = useState<string>('');
 
@@ -24,7 +24,7 @@ const Signin = () => {
 							THE FUTURE
 						</div>
 						<div className="text-sm text-gray-300 mt-1">
-							Operative Login Interface
+							Operative Signup Interface
 						</div>
 					</div>
 
@@ -62,10 +62,10 @@ const Signin = () => {
 							type="submit"
 							className="w-full bg-gray-600 hover:bg-gray-500 text-black font-bold py-2 rounded shadow transition-all duration-150"
 							onClick={async () => {
-								await userAPI.signin(username, password);
+								await userAPI.signup(username, password);
 							}}
 						>
-							SIGN IN
+							SIGN UP
 						</button>
 					</div>
 
@@ -78,4 +78,4 @@ const Signin = () => {
 	);
 };
 
-export default Signin;
+export default Signup;

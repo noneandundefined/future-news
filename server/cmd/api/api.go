@@ -4,12 +4,13 @@ import (
 	"fmt"
 	"net/http"
 
+	"future.server/internal/lib"
+	"future.server/internal/module/auth"
+	"future.server/internal/module/gallery"
+	"future.server/internal/packages"
 	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
 	"gorm.io/gorm"
-	"future.server/internal/lib"
-	"future.server/internal/module/auth"
-	"future.server/internal/packages"
 )
 
 type APIServer struct {
@@ -31,6 +32,7 @@ func (s *APIServer) Run() error {
 	subrouter := router.PathPrefix("/api/v1").Subrouter()
 
 	auth.NewHandler().RegisterRoutes(subrouter)
+	gallery.NewHandler().RegisterRoutes(subrouter)
 
 	// ------------------
 	// Middlewares
