@@ -10,12 +10,14 @@ const Header = () => {
                     <p className="text-white">LIVE</p>
                 </div>
 
-                <div>
+                <div className="cursor-pointer">
                     <DotsVertical fill="#fff" />
                 </div>
             </nav>
         </header>
     )
 }
+
+const 
 
 export default Header
