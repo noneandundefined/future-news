@@ -27,5 +27,5 @@ type SigninPayload struct {
 }
 
 type SelectGalleryPayload struct {
-	ID uint `json:"id" validate:"required"`
+	ID uint `json:"id" validate:"required"` // 0 - ставить default
 }
