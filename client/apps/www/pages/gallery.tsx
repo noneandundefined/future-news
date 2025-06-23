@@ -25,7 +25,7 @@ const ModalAddGallery = () => {
                             htmlFor="hidden-file"
                             className="cursor-pointer my-3 bg-gray-600 text-white py-1 px-4 rounded-lg hover:bg-gray-700 transition text-[14px]"
                         >
-                            Выбрать фото
+                            <Plus fill="#fff" />
                         </label>
 
                         <input
