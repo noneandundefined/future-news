@@ -25,14 +25,14 @@ func GetGalleryByUserUUID(uuid string) ([]schema.Gallery, error) {
 	db := database.GetDB()
 
 	var gallery []schema.Gallery
-	if err := db.Model(&schema.Gallery{}).Select("imei").Where("client_id = ?", id).Scan(&onlyDevices).Error; err != nil {
+	if err := db.Where("imei = ?", imei).First(&device).Error; err != nil {
 		if errors.Is(err, gorm.ErrRecordNotFound) {
-			return []schema.OnlyDevice{}, nil
+			return nil, nil
 		}
 
-		logger.Error(fmt.Sprintf("Database -> 'Error while fetching only device: %v'", err))
-		return []schema.OnlyDevice{}, fmt.Errorf("Ошибка при выборе устройств")
+		logger.Error(fmt.Sprintf("Database -> 'Error while fetching device: %v'", err))
+		return nil, fmt.Errorf("Ошибка при выборе устройства.")
 	}
 
-	return onlyDevices, nil
+	return &device, nil
 }
