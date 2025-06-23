@@ -51,4 +51,6 @@ func UpdateSelectGalleryById(id uint) error {
 	return nil
 }
 
-func UpdateAllSelectToFalse
+func UpdateAllSelectToFalseByUUID(uuid string) error {
+	
+}
