@@ -18,7 +18,7 @@ func NewHandler() *Handler {
 
 func (h Handler) SetGalleryHandler(w http.ResponseWriter, r *http.Request) {
 	user := r.Context().Value("identity").(*schema.Users)
-	
+
 	r.ParseMultipartForm(10 << 20)
 
 	file, handler, err := r.FormFile("photo")
@@ -35,7 +35,7 @@ func (h Handler) SetGalleryHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	photo := schema.Gallery{
-		UserUUID: "",
+		UserUUID: user.UUID,
 		Content:  fileBytes,
 		Name:     handler.Filename,
 		Format:   handler.Header.Get("Content-Type"),
