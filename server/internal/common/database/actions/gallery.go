@@ -52,5 +52,6 @@ func UpdateSelectGalleryById(id uint) error {
 }
 
 func UpdateAllSelectToFalseByUUID(uuid string) error {
-	
+	logger := lib.NewLogger()
+	db := database.GetDB()
 }
