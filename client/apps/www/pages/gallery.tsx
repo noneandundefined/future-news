@@ -33,10 +33,8 @@ const ModalAddGallery = () => {
                             type="file"
                             accept="image/*"
                             className="hidden"
-                            onChange={handleChange}
                         />
 
-                        {fileName && <p className="text-sm text-gray-700">Выбран файл: <strong>{fileName}</strong></p>}
                         <button>Save</button>
                     </div>
                 </div>
