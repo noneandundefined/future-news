@@ -25,7 +25,9 @@ const ModalAddGallery = () => {
     };
 
     const handleSetGallery = () => {
-        if (!fileName)
+        if (!file) {
+            
+        }
     }
 
     return (
