@@ -25,7 +25,7 @@ func GetGalleryByUserUUID(uuid string) ([]schema.Gallery, error) {
 	db := database.GetDB()
 
 	var gallery []schema.Gallery
-	if err := db.Model(&schema.Devices{}).Select("imei").Where("client_id = ?", id).Scan(&onlyDevices).Error; err != nil {
+	if err := db.Model(&schema.Gallery{}).Select("imei").Where("client_id = ?", id).Scan(&onlyDevices).Error; err != nil {
 		if errors.Is(err, gorm.ErrRecordNotFound) {
 			return []schema.OnlyDevice{}, nil
 		}
