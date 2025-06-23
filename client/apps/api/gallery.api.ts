@@ -65,18 +65,15 @@ class GalleryAPI {
 		}
 	}
 
-	public async update_select_photo(file: File): Promise<void> {
-		const formData = new FormData();
-		formData.append('photo', file);
-
+	public async update_select_photo(id: number): Promise<void> {
 		try {
-			const response = await axios.post(
+			const response = await axios.put(
 				`${
 					config.type.release == 'dev'
 						? config.links.URL_BACKEND_DEV
 						: config.links.URL_BACKEND_PROD
 				}/gallery`,
-				formData,
+				id,
 				{
 					headers: { 'Content-Type': 'multipart/form-data' },
 					withCredentials: true,
